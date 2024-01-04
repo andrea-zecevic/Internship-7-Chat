@@ -3,6 +3,7 @@ using System;
 using ChatApp.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatApp.Data.Migrations
 {
     [DbContext(typeof(ChatAppDbContext))]
-    partial class ChatAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240104160855_SeedDatabase")]
+    partial class SeedDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,21 +127,21 @@ namespace ChatApp.Data.Migrations
                         {
                             MessageId = 1,
                             ChannelId = 1,
-                            Timestamp = new DateTime(2024, 1, 4, 16, 27, 14, 80, DateTimeKind.Utc).AddTicks(895),
+                            Timestamp = new DateTime(2024, 1, 4, 16, 8, 55, 475, DateTimeKind.Utc).AddTicks(6927),
                             UserId = 1
                         },
                         new
                         {
                             MessageId = 2,
                             ChannelId = 3,
-                            Timestamp = new DateTime(2024, 1, 4, 16, 27, 14, 80, DateTimeKind.Utc).AddTicks(900),
+                            Timestamp = new DateTime(2024, 1, 4, 16, 8, 55, 475, DateTimeKind.Utc).AddTicks(6931),
                             UserId = 2
                         },
                         new
                         {
                             MessageId = 3,
                             ChannelId = 3,
-                            Timestamp = new DateTime(2024, 1, 4, 16, 27, 14, 80, DateTimeKind.Utc).AddTicks(901),
+                            Timestamp = new DateTime(2024, 1, 4, 16, 8, 55, 475, DateTimeKind.Utc).AddTicks(6932),
                             UserId = 3
                         });
                 });
@@ -175,14 +177,14 @@ namespace ChatApp.Data.Migrations
                             PrivateMessageId = 1,
                             ReceiverUserId = 6,
                             SenderUserId = 5,
-                            Timestamp = new DateTime(2024, 1, 4, 16, 27, 14, 80, DateTimeKind.Utc).AddTicks(919)
+                            Timestamp = new DateTime(2024, 1, 4, 16, 8, 55, 475, DateTimeKind.Utc).AddTicks(6951)
                         },
                         new
                         {
                             PrivateMessageId = 2,
                             ReceiverUserId = 8,
                             SenderUserId = 4,
-                            Timestamp = new DateTime(2024, 1, 4, 16, 27, 14, 80, DateTimeKind.Utc).AddTicks(921)
+                            Timestamp = new DateTime(2024, 1, 4, 16, 8, 55, 475, DateTimeKind.Utc).AddTicks(6955)
                         });
                 });
 
@@ -429,15 +431,6 @@ namespace ChatApp.Data.Migrations
                     b.HasBaseType("ChatApp.Data.Entities.Models.User");
 
                     b.HasDiscriminator().HasValue("Admin");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = 101,
-                            Email = "admin@dump.com",
-                            Password = "adminpassword",
-                            UserName = "Admin"
-                        });
                 });
 
             modelBuilder.Entity("ChatApp.Data.Entities.Models.Message", b =>

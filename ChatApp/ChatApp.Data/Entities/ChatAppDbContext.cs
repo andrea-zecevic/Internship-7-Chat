@@ -1,4 +1,5 @@
 ﻿using ChatApp.Data.Entities.Models;
+using ChatApp.Data.Seeds;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
@@ -64,7 +65,7 @@ namespace ChatApp.Data.Entities
 
 
             base.OnModelCreating(modelBuilder);
-
+            DatabaseSeeder.Seed(modelBuilder);
         }
     }
 
