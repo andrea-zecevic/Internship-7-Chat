@@ -9,6 +9,7 @@ namespace ChatApp.Data.Entities.Models
         public ICollection<UserChannel> ChannelUsers { get; set; } = new List<UserChannel>();
         public ICollection<Message> Messages { get; set; } = new List<Message>();
 
+        public Channel() { }
         public Channel(string name)
         {
             ChannelName = name;

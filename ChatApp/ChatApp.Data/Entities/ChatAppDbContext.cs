@@ -79,7 +79,7 @@ namespace ChatApp.Data.Entities
 
             config.Providers
                 .First()
-                .TryGet("connectionStrings:add:TodoApp:connectionString", out var connectionString);
+                .TryGet("connectionStrings:add:ChatApp:connectionString", out var connectionString);
 
             var options = new DbContextOptionsBuilder<ChatAppDbContext>()
                 .UseNpgsql(connectionString)
