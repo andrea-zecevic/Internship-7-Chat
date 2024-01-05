@@ -3,6 +3,7 @@ using System;
 using ChatApp.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatApp.Data.Migrations
 {
     [DbContext(typeof(ChatAppDbContext))]
-    partial class ChatAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240105144414_AddContentToPrivateMsg")]
+    partial class AddContentToPrivateMsg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,7 +131,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 1,
                             ChannelId = 1,
                             Content = "Kako si?",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6194),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6939),
                             UserId = 1
                         },
                         new
@@ -137,7 +139,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 2,
                             ChannelId = 3,
                             Content = "Di je printer",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6201),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6946),
                             UserId = 2
                         },
                         new
@@ -145,7 +147,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 3,
                             ChannelId = 3,
                             Content = "Uzea san sirup",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 44, 53, 259, DateTimeKind.Utc).AddTicks(6202),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 34, 14, 268, DateTimeKind.Utc).AddTicks(6947),
                             UserId = 3
                         },
                         new
@@ -153,7 +155,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 4,
                             ChannelId = 3,
                             Content = "Slej",
-                            Timestamp = new DateTime(2023, 12, 31, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6213),
+                            Timestamp = new DateTime(2023, 12, 31, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6954),
                             UserId = 2
                         },
                         new
@@ -161,7 +163,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 5,
                             ChannelId = 7,
                             Content = "Idemoooo",
-                            Timestamp = new DateTime(2023, 12, 31, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6214),
+                            Timestamp = new DateTime(2023, 12, 31, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6956),
                             UserId = 4
                         },
                         new
@@ -169,7 +171,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 6,
                             ChannelId = 5,
                             Content = "hksdndnsk",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 42, 53, 259, DateTimeKind.Utc).AddTicks(6217),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 32, 14, 268, DateTimeKind.Utc).AddTicks(6959),
                             UserId = 8
                         },
                         new
@@ -177,7 +179,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 7,
                             ChannelId = 4,
                             Content = "kad je sastanak",
-                            Timestamp = new DateTime(2023, 12, 21, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6218),
+                            Timestamp = new DateTime(2023, 12, 21, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6960),
                             UserId = 5
                         },
                         new
@@ -185,7 +187,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 8,
                             ChannelId = 1,
                             Content = "di su brosure",
-                            Timestamp = new DateTime(2024, 1, 4, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6219),
+                            Timestamp = new DateTime(2024, 1, 4, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6961),
                             UserId = 7
                         },
                         new
@@ -193,7 +195,7 @@ namespace ChatApp.Data.Migrations
                             MessageId = 9,
                             ChannelId = 2,
                             Content = "a100 ce bit mal",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 30, 53, 259, DateTimeKind.Utc).AddTicks(6220),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 20, 14, 268, DateTimeKind.Utc).AddTicks(6962),
                             UserId = 6
                         });
                 });
@@ -230,122 +232,16 @@ namespace ChatApp.Data.Migrations
                         new
                         {
                             PrivateMessageId = 1,
-                            Content = "Jel spramen cover za reel",
                             ReceiverUserId = 6,
                             SenderUserId = 5,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 52, 53, 259, DateTimeKind.Utc).AddTicks(6257)
+                            Timestamp = new DateTime(2024, 1, 5, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6994)
                         },
                         new
                         {
                             PrivateMessageId = 2,
-                            Content = "Jesi ispravia sve domace",
                             ReceiverUserId = 8,
                             SenderUserId = 4,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6261)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 3,
-                            Content = "Javi se frani",
-                            ReceiverUserId = 1,
-                            SenderUserId = 6,
-                            Timestamp = new DateTime(2024, 1, 2, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6262)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 4,
-                            Content = "Jesi ispravia sve domace",
-                            ReceiverUserId = 1,
-                            SenderUserId = 4,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6263)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 5,
-                            Content = "Javi se frani",
-                            ReceiverUserId = 1,
-                            SenderUserId = 3,
-                            Timestamp = new DateTime(2023, 12, 29, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6264)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 6,
-                            Content = "Koliko dana je od daysa",
-                            ReceiverUserId = 5,
-                            SenderUserId = 2,
-                            Timestamp = new DateTime(2024, 1, 5, 12, 54, 53, 259, DateTimeKind.Utc).AddTicks(6267)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 7,
-                            Content = "ne znan",
-                            ReceiverUserId = 1,
-                            SenderUserId = 4,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 51, 53, 259, DateTimeKind.Utc).AddTicks(6268)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 8,
-                            Content = "aloooo",
-                            ReceiverUserId = 2,
-                            SenderUserId = 7,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 53, 53, 259, DateTimeKind.Utc).AddTicks(6269)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 9,
-                            Content = "slejaca",
-                            ReceiverUserId = 3,
-                            SenderUserId = 9,
-                            Timestamp = new DateTime(2023, 12, 25, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6270)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 10,
-                            Content = "ikona",
-                            ReceiverUserId = 7,
-                            SenderUserId = 10,
-                            Timestamp = new DateTime(2024, 1, 5, 13, 59, 53, 259, DateTimeKind.Utc).AddTicks(6273)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 11,
-                            Content = "treiba namistit set",
-                            ReceiverUserId = 4,
-                            SenderUserId = 11,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 45, 53, 259, DateTimeKind.Utc).AddTicks(6274)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 12,
-                            Content = "imas li kljuc od ureda",
-                            ReceiverUserId = 8,
-                            SenderUserId = 4,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6275)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 13,
-                            Content = "doc se sad voda tribas je skupit",
-                            ReceiverUserId = 5,
-                            SenderUserId = 9,
-                            Timestamp = new DateTime(2023, 12, 24, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6276)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 14,
-                            Content = "ocemo na rucak",
-                            ReceiverUserId = 8,
-                            SenderUserId = 1,
-                            Timestamp = new DateTime(2023, 12, 25, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6277)
-                        },
-                        new
-                        {
-                            PrivateMessageId = 15,
-                            Content = "kad ces bit u uredu",
-                            ReceiverUserId = 9,
-                            SenderUserId = 3,
-                            Timestamp = new DateTime(2023, 12, 6, 14, 54, 53, 259, DateTimeKind.Utc).AddTicks(6278)
+                            Timestamp = new DateTime(2024, 1, 5, 14, 44, 14, 268, DateTimeKind.Utc).AddTicks(6997)
                         });
                 });
 

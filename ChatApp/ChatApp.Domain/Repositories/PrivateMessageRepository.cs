@@ -38,5 +38,15 @@ namespace ChatApp.Domain.Repositories
                 .ToList();
         }
 
+        public ICollection<PrivateMessage> GetConversation(int userId1, int userId2)
+        {
+            return DbContext.PrivateMessages
+                .Where(pm => (pm.SenderUserId == userId1 && pm.ReceiverUserId == userId2) ||
+                             (pm.SenderUserId == userId2 && pm.ReceiverUserId == userId1))
+                .OrderBy(pm => pm.Timestamp)
+                .ToList();
+        }
+
+
     }
 }

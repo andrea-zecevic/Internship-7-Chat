@@ -97,8 +97,21 @@ namespace ChatApp.Data.Seeds
             builder.Entity<PrivateMessage>()
                 .HasData(new List<PrivateMessage>
                 {
-                    new PrivateMessage { PrivateMessageId = 1, Timestamp = DateTime.UtcNow, SenderUserId = 5, ReceiverUserId = 6 },
-                    new PrivateMessage { PrivateMessageId = 2, Timestamp = DateTime.UtcNow, SenderUserId = 4, ReceiverUserId = 8 }
+                    new PrivateMessage { PrivateMessageId = 1, Timestamp = DateTime.UtcNow.AddMinutes(-2), SenderUserId = 5, ReceiverUserId = 6, Content = "Jel spramen cover za reel" },
+                    new PrivateMessage { PrivateMessageId = 2, Timestamp = DateTime.UtcNow, SenderUserId = 4, ReceiverUserId = 8, Content = "Jesi ispravia sve domace"},
+                    new PrivateMessage { PrivateMessageId = 3, Timestamp = DateTime.UtcNow.AddDays(-3), SenderUserId = 6, ReceiverUserId = 1, Content= "Javi se frani"},
+                    new PrivateMessage { PrivateMessageId = 4, Timestamp = DateTime.UtcNow, SenderUserId = 4, ReceiverUserId = 1, Content = "Jesi ispravia sve domace"},
+                    new PrivateMessage { PrivateMessageId = 5, Timestamp = DateTime.UtcNow.AddDays(-7), SenderUserId = 3, ReceiverUserId = 1, Content= "Javi se frani"},
+                    new PrivateMessage { PrivateMessageId = 6, Timestamp = DateTime.UtcNow.AddHours(-2), SenderUserId = 2, ReceiverUserId = 5, Content = "Koliko dana je od daysa"},
+                    new PrivateMessage { PrivateMessageId = 7, Timestamp = DateTime.UtcNow.AddMinutes(-3), SenderUserId = 4, ReceiverUserId = 1, Content= "ne znan"},
+                    new PrivateMessage { PrivateMessageId = 8, Timestamp = DateTime.UtcNow.AddMinutes(-1), SenderUserId = 7, ReceiverUserId = 2, Content = "aloooo"},
+                    new PrivateMessage { PrivateMessageId = 9, Timestamp = DateTime.UtcNow.AddDays(-11), SenderUserId = 9, ReceiverUserId = 3, Content= "slejaca"},
+                    new PrivateMessage { PrivateMessageId = 10, Timestamp = DateTime.UtcNow.AddMinutes(-55), SenderUserId = 10, ReceiverUserId = 7, Content = "ikona"},
+                    new PrivateMessage { PrivateMessageId = 11, Timestamp = DateTime.UtcNow.AddMinutes(-9), SenderUserId = 11, ReceiverUserId = 4, Content= "treiba namistit set"},
+                    new PrivateMessage { PrivateMessageId = 12, Timestamp = DateTime.UtcNow, SenderUserId = 4, ReceiverUserId = 8, Content = "imas li kljuc od ureda"},
+                    new PrivateMessage { PrivateMessageId = 13, Timestamp = DateTime.UtcNow.AddDays(-12), SenderUserId = 9, ReceiverUserId = 5, Content= "doc se sad voda tribas je skupit"},
+                    new PrivateMessage { PrivateMessageId = 14, Timestamp = DateTime.UtcNow.AddDays(-11), SenderUserId = 1, ReceiverUserId = 8, Content = "ocemo na rucak"},
+                    new PrivateMessage { PrivateMessageId = 15, Timestamp = DateTime.UtcNow.AddDays(-30), SenderUserId = 3, ReceiverUserId = 9, Content= "kad ces bit u uredu"}
                 });
         }
     }
