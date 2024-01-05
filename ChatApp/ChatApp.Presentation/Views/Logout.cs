@@ -4,7 +4,7 @@ namespace ChatApp.Presentation.Views
 {
     public class Logout
     {
-        private User _currentUser;
+        private User? _currentUser;
 
         public Logout(User currentUser)
         {
@@ -12,8 +12,12 @@ namespace ChatApp.Presentation.Views
         }
         public void Execute()
         {
-            // Logika za odjavu
+            Console.WriteLine("Odjavljujete se iz aplikacije...");
+            _currentUser = null;
+
+            Program.ShowMainMenu();
         }
+
     }
 }
 

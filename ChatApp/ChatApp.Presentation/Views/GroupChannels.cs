@@ -29,7 +29,10 @@ namespace ChatApp.Presentation.Views
 
                 for (int i = 0; i < options.Count; i++)
                 {
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine($"{i + 1}. {options[i].Item1}");
+                    Console.ResetColor();
                 }
 
                 Console.Write("\nOdaberite opciju: ");

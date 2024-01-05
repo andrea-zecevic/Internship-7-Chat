@@ -1,11 +1,15 @@
 ﻿using ChatApp.Presentation.Authentication;
 using ChatApp.Presentation.Utils;
+using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Dobrodosli u ChatApp!\n");
+        Console.BackgroundColor = ConsoleColor.Green;
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("Dobrodošli u ChatApp!\n");
+        Console.ResetColor();
         Utils.DisplayInstructions();
 
         while (true)
@@ -14,34 +18,44 @@ class Program
         }
     }
 
-    private static void ShowMainMenu()
+    public static void ShowMainMenu()
     {
-        Console.WriteLine("\n--- Main Menu ---");
-        Console.WriteLine("1. Login");
-        Console.WriteLine("2. Registracija");
-        Console.WriteLine("3. Izlaz");
-
-        Console.Write("\nUnesi svoju akciju: ");
-        var choice = Console.ReadKey();
-
-        switch (choice.Key)
+        while (true)
         {
-            case ConsoleKey.D1:
-            case ConsoleKey.NumPad1:
-                new LoginForm().Show();
-                break;
-            case ConsoleKey.D2:
-            case ConsoleKey.NumPad2:
-                new RegistrationForm().Show();
-                break;
-            case ConsoleKey.D3:
-            case ConsoleKey.NumPad3:
-                Environment.Exit(0);
-                break;
-            default:
-                Console.WriteLine("\nNeispravan unos. Molim pokusajte ponovno.");
-                Utils.WaitForUserInput();
-                break;
+            Console.WriteLine("\n--- Main Menu ---\n");
+
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" 1. Login ");
+            Console.ResetColor();
+            Console.WriteLine(" 2. Registracija ");
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" 3. Izlaz ");
+            Console.ResetColor();
+
+            Console.Write("\nUnesite svoju akciju: ");
+            var choice = Console.ReadKey();
+
+            switch (choice.Key)
+            {
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
+                    new LoginForm().Show();
+                    return;
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    new RegistrationForm().Show();
+                    return;
+                case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("\nNeispravan unos. Molim pokušajte ponovno.");
+                    Utils.WaitForUserInput();
+                    continue;
+            }
         }
     }
 }
