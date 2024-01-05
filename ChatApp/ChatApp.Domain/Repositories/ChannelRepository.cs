@@ -52,8 +52,13 @@ namespace ChatApp.Domain.Repositories
 
         public ICollection<Channel> GetAll()
         {
-            return DbContext.Channels.ToList();
+            return DbContext.Channels
+                .Include(c => c.ChannelUsers)
+                .ThenInclude(uc => uc.User)
+                .ToList();
         }
+
+
 
 
     }

@@ -20,16 +20,15 @@ namespace ChatApp.Presentation.Views
 
                 var options = new List<(string, Action)>
                 {
-                    ("Grupni kanali", () => new GroupChannels().Show()),
-                    ("Privatne poruke", () => new PrivateMessages().Show()),
-                    ("Postavke profila", () => new ProfileSettings().Show()),
-                    ("Odjava iz profila", () => new Logout().Execute())
+                    ("Grupni kanali", () => new GroupChannels(_currentUser).Show()),
+                    ("Privatne poruke", () => new PrivateMessages(_currentUser).Show()),
+                    ("Postavke profila", () => new ProfileSettings(_currentUser).Show()),
+                    ("Odjava iz profila", () => new Logout(_currentUser).Execute())
                 };
-
 
                 if (_currentUser is Admin)
                 {
-                    options.Insert(2, ("User management", () => new UserManagement().Show()));
+                    options.Insert(2, ("User management", () => new UserManagement(_currentUser).Show()));
                 }
 
                 for (int i = 0; i < options.Count; i++)
