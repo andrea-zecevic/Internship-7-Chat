@@ -1,17 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ChatApp.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Configuration;
-using ChatApp.Data.Entities;
 
-namespace ChatApp.Domain.Factories;
-
-public static class DbContextFactory
+namespace ChatApp.Data.Factories
 {
-    public static ChatAppDbContext GetChatAppDbContext()
+    public static class DbContextFactory
     {
-        var options = new DbContextOptionsBuilder()
-            .UseNpgsql(ConfigurationManager.ConnectionStrings["ChatApp"].ConnectionString)
-            .Options;
+        public static ChatAppDbContext GetChatAppDbContext()
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ChatApp"].ConnectionString;
+            var options = new DbContextOptionsBuilder<ChatAppDbContext>()
+                .UseNpgsql(connectionString)
+                .Options;
 
-        return new ChatAppDbContext(options);
+            return new ChatAppDbContext(options);
+        }
     }
 }
