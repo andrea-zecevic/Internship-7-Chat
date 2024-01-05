@@ -23,17 +23,23 @@ namespace ChatApp.Presentation.Actions.PrivateMessageAction
 
             if (!users.Any())
             {
-                Console.WriteLine("Nema dostupnih korisnika za slanje poruke.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nNema dostupnih korisnika za slanje poruke.");
+                Console.ResetColor();
                 return;
             }
 
-            Console.WriteLine("Odaberite korisnika za slanje poruke:");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nOdaberite korisnika za slanje poruke:");
+            Console.ResetColor();
             for (int i = 0; i < users.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {users[i].UserName}");
             }
 
-            Console.Write("\nOdaberite broj korisnika: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("\nUnesite broj korisnika: ");
+            Console.ResetColor();
             if (int.TryParse(Console.ReadLine(), out int userIndex) &&
                 userIndex >= 1 && userIndex <= users.Count)
             {
@@ -54,11 +60,15 @@ namespace ChatApp.Presentation.Actions.PrivateMessageAction
 
                 privateMessageRepository.Add(message);
 
-                Console.WriteLine("Poruka je poslana.");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nPoruka je poslana.");
+                Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("Nevazeci odabir.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nNevažeći odabir.");
+                Console.ResetColor();
             }
 
             NavigationHelper.ReturnToDashboard(_currentUser);

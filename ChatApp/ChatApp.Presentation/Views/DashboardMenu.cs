@@ -15,8 +15,11 @@ namespace ChatApp.Presentation.Views
         {
             while (true)
             {
+
                 Console.Clear();
-                Console.WriteLine("--- Dashboard ---");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("==== Dashboard ====");
+                Console.ResetColor();
 
                 var options = new List<(string, Action)>
                 {
@@ -48,7 +51,10 @@ namespace ChatApp.Presentation.Views
                 }
                 else
                 {
+
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Nevažeći odabir. Pokušajte ponovno.");
+                    Console.ResetColor();
                     Console.ReadKey();
                 }
             }

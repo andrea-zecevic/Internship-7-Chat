@@ -24,15 +24,9 @@ class Program
         {
             Console.WriteLine("\n--- Main Menu ---\n");
 
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" 1. Login ");
-            Console.ResetColor();
             Console.WriteLine(" 2. Registracija ");
-            Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" 3. Izlaz ");
-            Console.ResetColor();
 
             Console.Write("\nUnesite svoju akciju: ");
             var choice = Console.ReadKey();

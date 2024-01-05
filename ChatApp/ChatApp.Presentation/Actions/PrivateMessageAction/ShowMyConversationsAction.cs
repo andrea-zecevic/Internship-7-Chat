@@ -41,7 +41,9 @@ namespace ChatApp.Presentation.Actions.PrivateMessageAction
             }
             else
             {
-                Console.WriteLine("Nevazeci odabir.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nNevažeći odabir.");
+                Console.ResetColor();
                 NavigationHelper.ReturnToDashboard(_currentUser);
             }
 

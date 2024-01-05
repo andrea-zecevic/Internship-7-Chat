@@ -29,7 +29,9 @@ namespace ChatApp.Presentation.Authentication
             if (user == null)
             {
                 _lastFailedLoginTime = DateTime.Now;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Netočna kombinacija e-maila i lozinke. Pokušajte ponovno.");
+                Console.ResetColor();
             }
             else
             {
