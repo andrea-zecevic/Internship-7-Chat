@@ -82,9 +82,15 @@ namespace ChatApp.Data.Seeds
             builder.Entity<Message>()
                 .HasData(new List<Message>
                 {
-                    new Message { MessageId = 1, Timestamp = DateTime.UtcNow, UserId = 1, ChannelId = 1 },
-                    new Message { MessageId = 2, Timestamp = DateTime.UtcNow, UserId = 2, ChannelId = 3 },
-                    new Message { MessageId = 3, Timestamp = DateTime.UtcNow, UserId = 3, ChannelId = 3 },
+                    new Message { MessageId = 1, Timestamp = DateTime.UtcNow, UserId = 1, ChannelId = 1, Content = "Kako si?" },
+                    new Message { MessageId = 2, Timestamp = DateTime.UtcNow, UserId = 2, ChannelId = 3, Content = "Di je printer" },
+                    new Message { MessageId = 3, Timestamp = DateTime.UtcNow.AddMinutes(-10), UserId = 3, ChannelId = 3, Content = "Uzea san sirup"},
+                    new Message { MessageId = 4, Timestamp = DateTime.UtcNow.AddDays(-5), UserId = 2, ChannelId = 3, Content = "Slej" },
+                    new Message { MessageId = 5, Timestamp = DateTime.UtcNow.AddDays(-5), UserId = 4, ChannelId = 7, Content = "Idemoooo" },
+                    new Message { MessageId = 6, Timestamp = DateTime.UtcNow.AddMinutes(-12), UserId = 8, ChannelId = 5, Content = "hksdndnsk" },
+                    new Message { MessageId = 7, Timestamp = DateTime.UtcNow.AddDays(-15), UserId = 5, ChannelId = 4, Content = "kad je sastanak" },
+                    new Message { MessageId = 8, Timestamp = DateTime.UtcNow.AddDays(-1), UserId = 7, ChannelId = 1, Content = "di su brosure" },
+                    new Message { MessageId = 9, Timestamp = DateTime.UtcNow.AddMinutes(-24), UserId = 6, ChannelId = 2, Content = "a100 ce bit mal" },
                 });
 
 

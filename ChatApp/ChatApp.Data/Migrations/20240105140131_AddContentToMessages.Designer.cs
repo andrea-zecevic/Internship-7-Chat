@@ -3,6 +3,7 @@ using System;
 using ChatApp.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatApp.Data.Migrations
 {
     [DbContext(typeof(ChatAppDbContext))]
-    partial class ChatAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240105140131_AddContentToMessages")]
+    partial class AddContentToMessages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,73 +130,22 @@ namespace ChatApp.Data.Migrations
                         {
                             MessageId = 1,
                             ChannelId = 1,
-                            Content = "Kako si?",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6161),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 1, 30, 318, DateTimeKind.Utc).AddTicks(4118),
                             UserId = 1
                         },
                         new
                         {
                             MessageId = 2,
                             ChannelId = 3,
-                            Content = "Di je printer",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6171),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 1, 30, 318, DateTimeKind.Utc).AddTicks(4128),
                             UserId = 2
                         },
                         new
                         {
                             MessageId = 3,
                             ChannelId = 3,
-                            Content = "Uzea san sirup",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 3, 19, 964, DateTimeKind.Utc).AddTicks(6172),
+                            Timestamp = new DateTime(2024, 1, 5, 14, 1, 30, 318, DateTimeKind.Utc).AddTicks(4130),
                             UserId = 3
-                        },
-                        new
-                        {
-                            MessageId = 4,
-                            ChannelId = 3,
-                            Content = "Slej",
-                            Timestamp = new DateTime(2023, 12, 31, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6180),
-                            UserId = 2
-                        },
-                        new
-                        {
-                            MessageId = 5,
-                            ChannelId = 7,
-                            Content = "Idemoooo",
-                            Timestamp = new DateTime(2023, 12, 31, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6181),
-                            UserId = 4
-                        },
-                        new
-                        {
-                            MessageId = 6,
-                            ChannelId = 5,
-                            Content = "hksdndnsk",
-                            Timestamp = new DateTime(2024, 1, 5, 14, 1, 19, 964, DateTimeKind.Utc).AddTicks(6184),
-                            UserId = 8
-                        },
-                        new
-                        {
-                            MessageId = 7,
-                            ChannelId = 4,
-                            Content = "kad je sastanak",
-                            Timestamp = new DateTime(2023, 12, 21, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6186),
-                            UserId = 5
-                        },
-                        new
-                        {
-                            MessageId = 8,
-                            ChannelId = 1,
-                            Content = "di su brosure",
-                            Timestamp = new DateTime(2024, 1, 4, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6187),
-                            UserId = 7
-                        },
-                        new
-                        {
-                            MessageId = 9,
-                            ChannelId = 2,
-                            Content = "a100 ce bit mal",
-                            Timestamp = new DateTime(2024, 1, 5, 13, 49, 19, 964, DateTimeKind.Utc).AddTicks(6188),
-                            UserId = 6
                         });
                 });
 
@@ -229,14 +180,14 @@ namespace ChatApp.Data.Migrations
                             PrivateMessageId = 1,
                             ReceiverUserId = 6,
                             SenderUserId = 5,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6222)
+                            Timestamp = new DateTime(2024, 1, 5, 14, 1, 30, 318, DateTimeKind.Utc).AddTicks(4153)
                         },
                         new
                         {
                             PrivateMessageId = 2,
                             ReceiverUserId = 8,
                             SenderUserId = 4,
-                            Timestamp = new DateTime(2024, 1, 5, 14, 13, 19, 964, DateTimeKind.Utc).AddTicks(6232)
+                            Timestamp = new DateTime(2024, 1, 5, 14, 1, 30, 318, DateTimeKind.Utc).AddTicks(4157)
                         });
                 });
 

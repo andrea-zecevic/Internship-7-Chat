@@ -1,6 +1,7 @@
 ﻿using ChatApp.Data.Entities;
 using ChatApp.Domain.Enums;
 using ChatApp.Data.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChatApp.Domain.Repositories
 {
@@ -26,6 +27,13 @@ namespace ChatApp.Domain.Repositories
 
             DbContext.Messages.Remove(messageToDelete);
             return SaveChanges();
+        }
+        public ICollection<Message> GetMessagesByChannelId(int channelId)
+        {
+            return DbContext.Messages
+                .Where(m => m.ChannelId == channelId)
+                .Include(m => m.User)
+                .ToList();
         }
 
     }
